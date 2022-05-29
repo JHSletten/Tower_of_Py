@@ -10,8 +10,14 @@ from classes import *
 def create_hero():
   print('First, let\'s start by making a character')
   a = input('What is the name of your character? \n>>>')
-  hero_class = ['Toad', 'Fighter', 'Wizard', 'Paladin']
-  b = int(input('What class do you want to play as? \nFighter: 1 \nWizard: 2 \nPaladin: 3 \n>>>'))
+  hero_class = ['Giga Chad', 'Fighter', 'Wizard', 'Paladin']
+  c = False
+  while c == False:
+    b = int(input('What class do you want to play as? \nFighter: 1 \nWizard: 2 \nPaladin: 3 \n>>>'))
+    if b in [0, 1, 2, 3]:
+      c = True
+      break
+    input('Invalid input! Try again. \n>')
   return Hero(a, hero_class[b]) 
 
 def create_enemies(enemies, stage):
@@ -89,6 +95,7 @@ def combat(hero, enemy):
   if hero.alive:
     input('You defeat the {enemy}\n>'.format(enemy = enemy.name))
     hero.new_turn()
+    hero.increase_score(enemy.level * 100)
   else:
     input('\n{name} was slain by a mighty {enemy}\nNext>'.format(name = hero.name, enemy = enemy.name))
     print('', hero, '', sep='\n')
@@ -169,3 +176,5 @@ def stage_3(hero):
   input('Congratualtions {player}!. You have fought your way through the Tower of Py, and have defeated the void despot, thon.\n>'.format(player = hero.name))
   input('After completing this feat of excellence, you are deserving of a life of rest ...\n')
   input('... but you also could try to scale the tower again with a different class! \n>')
+  hero.increase_score(6100)
+  print(hero)

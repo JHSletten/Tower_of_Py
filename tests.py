@@ -13,7 +13,9 @@ from functions import *
 # test_hero.mana_drain(1)
 # test_hero.mana_gain(3)
 # print(test_hero)
+# test_hero.increase_score(300)
 # test_hero.level_up()
+# print(test_hero)
 # print(test_hero)
 
 #Spell tests

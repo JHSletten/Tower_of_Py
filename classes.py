@@ -24,6 +24,7 @@ class Hero:
     self.element = 'Physical'
     self.alive = True
     self.spell_book = {1:[], 2:[], 3:[]}
+    self.score = 0
     if self.player_class == 'Fighter':
       self.str = 6
       self.max_hp = 12
@@ -46,20 +47,21 @@ class Hero:
       self.magic = [1, '']
       create_spells(paladin_source, self.spell_book)
     else:
-      self.player_class = 'Toad'
-      self.str = 1
-      self.max_hp = 1
-      self.max_mp = 0
-      self.grit = [0, '']
-      self.magic = [0, '']
+      self.player_class = 'Giga Chad'
+      self.str = 20
+      self.max_hp = 20
+      self.max_mp = 20
+      self.grit = [3, '+']
+      self.magic = [3, '+']
     self.temp_hp = self.max_hp
     self.temp_mp = self.max_mp
 
   def __repr__ (self):
-     return ('{name}   (level {level} {player_class}) \nStrength: {strength}  Grit: {grit1}{grit2}  Magic: {magic1}{magic2}\nHP: {temp_hp}/{max_hp}  MP: {temp_mp}/{max_mp}'.format(name = self.name, level = self.level, player_class = self.player_class, strength = self.str, grit1 = self.grit[0], grit2 = self.grit[1], magic1 = self.magic[0], magic2 = self.magic[1], temp_hp = int(self.temp_hp), max_hp = self.max_hp, temp_mp = int(self.temp_mp), max_mp = self.max_mp))
+     return ('{name}   (level {level} {player_class}) \nStrength: {strength}  Grit: {grit1}{grit2}  Magic: {magic1}{magic2}\nHP: {temp_hp}/{max_hp}  MP: {temp_mp}/{max_mp}   Score: {score}'.format(name = self.name, level = self.level, player_class = self.player_class, strength = self.str, grit1 = self.grit[0], grit2 = self.grit[1], magic1 = self.magic[0], magic2 = self.magic[1], temp_hp = int(self.temp_hp), max_hp = self.max_hp, temp_mp = int(self.temp_mp), max_mp = self.max_mp, score=self.score))
 
   def level_up(self):
     self.level += 1
+    self.score = 2*self.score
     if self.player_class == 'Fighter':
       self.str += 6
       self.max_hp += 6
@@ -79,7 +81,7 @@ class Hero:
       self.grit[0] += 1
       self.magic[0] += 1
     else:
-      self.player_class = 'Toad'
+      self.player_class = 'Giga Chad'
       self.str += 1
       self.max_hp += 1
     self.full_heal()
@@ -133,6 +135,8 @@ class Hero:
     self.heal(self.max_hp)
     self.mana_gain(self.max_mp)
 
+  def increase_score(self, score):
+    self.score += score
 
 #Defines spell class (3 levels)
 #Attributes: name, damage, element, target and level
