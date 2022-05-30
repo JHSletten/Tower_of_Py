@@ -26,7 +26,7 @@ class Hero:
     self.spell_book = {1:[], 2:[], 3:[]}
     self.score = 0
     if self.player_class == 'Fighter':
-      self.str = 6
+      self.str = 10
       self.max_hp = 12
       self.max_mp = 0
       self.spell_book[1] = [Spell(fighter_source[0], fighter_source[1], fighter_source[2], fighter_source[3], fighter_source[4])]
@@ -63,7 +63,7 @@ class Hero:
     self.level += 1
     self.score = 2*self.score
     if self.player_class == 'Fighter':
-      self.str += 6
+      self.str += 5
       self.max_hp += 6
       self.max_mp += 3
       self.grit[0] += 1
