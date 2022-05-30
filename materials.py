@@ -33,3 +33,5 @@ stage_3_enemies = [['Death Baron, Clandzhuul', 'Death', 24, 3], ['Holy Duchess, 
 stage_1_list = []
 stage_2_list = []
 stage_3_list = []
+
+attack_dict = {'Fighter': 'heavy steel sword.', 'Wizard': 'Wizard staff.', 'Paladin': 'holy blade.', 'Giga Chad': 'massive muscles.'}

@@ -138,6 +138,14 @@ class Hero:
   def increase_score(self, score):
     self.score += score
 
+  def print_attack_text(self, enemy):
+    if self.player_class == 'Fighter': a = 'Fighter'
+    elif self.player_class == 'Wizard': a = 'Wizard'
+    elif self.player_class == 'Paladin': a = 'Paladin'
+    else: a = 'Giga Chad'
+    print('\nYou attack', enemy.name, 'with your', attack_dict[a])
+
+
 #Defines spell class (3 levels)
 #Attributes: name, damage, element, target and level
 #Funtions: representaion, cast spell

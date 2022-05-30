@@ -13,8 +13,9 @@ def create_hero():
   hero_class = ['Giga Chad', 'Fighter', 'Wizard', 'Paladin']
   c = False
   while c == False:
-    b = int(input('What class do you want to play as? \nFighter: 1 \nWizard: 2 \nPaladin: 3 \n>>>'))
-    if b in [0, 1, 2, 3]:
+    b = input('What class do you want to play as? \nFighter: 1 \nWizard: 2 \nPaladin: 3 \n>>>')
+    if b in ['0', '1', '2', '3']:
+      b = int(b)
       c = True
       break
     input('Invalid input! Try again. \n>')
@@ -48,7 +49,7 @@ def combat(hero, enemy):
     while action not in ['a', 'A', 'S', 's']:
       action = input('It\'s your turn! \n\n{stats} \nAttack: a \nCast Spell: s \n>>>'.format(stats = hero))
       if action.upper() == 'A':
-        print('\nYou attack', enemy.name, 'with a mighty blow.')
+        hero.print_attack_text(enemy)
         if attack(hero, enemy):
           damage = calculate_damage(hero.attack(), enemy.element)
           enemy.take_damage(damage)
@@ -68,7 +69,7 @@ def combat(hero, enemy):
               if spell.name.upper() == action.upper():
                 spell_status = hero.cast_spell(spell)
                 if spell_status == 'Not enough MP':
-                  print('You fail to cast {spell} due to unsuficient mana. \nMana cost: {mana_cost} \nMP: {mana_level} '.format(spell = spell.name, mana_cost = spell.MP_cost, mana_level = hero.temp_mp))
+                  print('You fail to cast {spell} due to insuficient mana. \nMana cost: {mana_cost} \nMP: {mana_level} '.format(spell = spell.name, mana_cost = spell.MP_cost, mana_level = hero.temp_mp))
                 elif spell_status == 'Healed':
                   print('HP: {tempHP}/{maxHP}'.format(tempHP = int(hero.temp_hp), maxHP= hero.max_hp))
                 else:
