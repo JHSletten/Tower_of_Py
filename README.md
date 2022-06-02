@@ -8,6 +8,7 @@ The program is written entirely in Python 3.9 (Windows) and is played in the com
 * functions.py
 * materials.py
 * run.py
+
 You access the game itself by running the run.py file. 
 
 #### My experience and purpose for making this game:
