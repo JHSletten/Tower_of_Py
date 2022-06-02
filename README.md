@@ -1,13 +1,13 @@
 # Tower_of_Py
 #### A CS101 final project through Codecademy
 
-**The Tower of Py** is a simple text based fantasy computer game. You can pick one of three classes to play (Fighter, Wizard, Paladin) and attempt tp fight your way through challenging encounters in the Tower of Py.
+**The Tower of Py** is a simple text based fantasy computer game. You can pick one of three classes to play (Fighter, Wizard, Paladin) and attempt to fight your way through challenging encounters in the Tower of Py.
 
-The program is written entirely in Python and is played in the command line. To play the game you need to download these files:
+The program is written entirely in Python 3.9 (Windows) and is played in the command line. To play the game you need to download these files:
 * classes.py
 * functions.py
 * materials.py
-* run.py) 
+* run.py
 You access the game itself by running the run.py file. 
 
 #### My experience and purpose for making this game:
