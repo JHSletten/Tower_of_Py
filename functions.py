@@ -105,7 +105,7 @@ def combat(hero, enemy):
 
 def stage_1(hero):
   input('\nYou make your way towards the base of the Tower of Py.\n>') 
-  input('By the large brown door which marks the entrence, you spot your first enemy.\n>')
+  input('By the large brown door which marks the entrance, you spot your first enemy.\n>')
   hero.full_heal()
   create_enemies(stage_1_enemies, stage_1_list)
   combat(hero, stage_1_list[0])
