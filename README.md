@@ -11,5 +11,9 @@ The program is written entirely in Python 3.9 (Windows) and is played in the com
 
 You access the game itself by running the run.py file. 
 
+OR 
+you can play the game in your browser here:
+https://replit.com/@JohannesSletten/TowerofPy?v=1
+
 #### My experience and purpose for making this game:
 *I wrote this program to apply my basic python abalities to create a fairly simple fantasy text based video game. This was a very useful experience. I saw how the smallest tasks could need large amounts of robust and logical code. I got experience using GitHub, and I've made mistakes I'm planning on not repeating.* 
